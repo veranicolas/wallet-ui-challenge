@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import UserAvatar from '@/components/UserAvatar';
 import { useWalletStore } from '@/stores/walletStore';
 import { formatCurrency } from '@/utils';
@@ -12,7 +12,7 @@ import { User } from '@/types';
 
 import './styles.css';
 
-const SuccessPage = () => {
+function SuccessPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const transactionId = searchParams.get('transactionId');
@@ -21,9 +21,6 @@ const SuccessPage = () => {
   const { transactions } = useWalletStore();
   const transaction = transactions.find(tx => tx.id === transactionId);
 
-  console.log('Transaction ID from params:', transactionId);
-  console.log('All Transactions:', transactions);
-  console.log('Transaction:', transaction);
   const sendTo = transaction?.recipient;
 
   const navigateHome = () => {
@@ -86,6 +83,7 @@ const SuccessPage = () => {
     { label: 'Reference Number', value: transaction?.reference },
   ]
 
+
   if (!transaction) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -145,6 +143,12 @@ const SuccessPage = () => {
       </button>
     </div>
   );
-};
+}
 
-export default SuccessPage;
+export default function SuccessPage() {
+  return (
+    <Suspense>
+      <SuccessPageContent />
+    </Suspense>
+  );
+}

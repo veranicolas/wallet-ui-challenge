@@ -5,6 +5,13 @@
   --foreground: #171717;
 }
 
+/* Custom Scrollbar: Modern, Mobile-like */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b348 #f4f4f45e;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

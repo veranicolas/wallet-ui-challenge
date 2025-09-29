@@ -41,29 +41,29 @@ const TransfersPage = () => {
         </div>
       </div>
 
+      <div className="filter-section">
+        {/* Date Filter */}
+        <div className="filter-controls">
+          <Calendar size={20} className="calendar-icon" />
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="date-picker"
+            placeholder="Select date"
+          />
+          {selectedDate && (
+            <button
+              onClick={() => setSelectedDate('')}
+              className="clear-filter"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+      </div>
       {/* Transactions List */}
       <div className="transactions-container">
-        <div className="filter-section">
-          {/* Date Filter */}
-          <div className="filter-controls">
-            <Calendar size={20} className="calendar-icon" />
-            <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className="date-picker"
-              placeholder="Select date"
-            />
-            {selectedDate && (
-              <button
-                onClick={() => setSelectedDate('')}
-                className="clear-filter"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-        </div>
         <div className="transactions-list">
           {transactions.length === 0 ? (
             Array.from({ length: 3 }).map((_, i) => <TransactionSkeleton key={i} />)

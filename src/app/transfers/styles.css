@@ -19,15 +19,13 @@
     }
   }
 
-  .transactions-container {
-    @apply bg-white px-6 py-6 rounded-t-[40px] -mt-6 overflow-y-auto h-[90vh] max-h-[87vh];
-  }
+  
 
   .filter-section {
-    @apply space-y-4 bg-white rounded-t-[40px] mb-4;
+    @apply space-y-4 bg-white rounded-t-[40px] mb-4 -mt-6;
 
     .filter-controls {
-      @apply flex justify-end items-center space-x-2;
+      @apply flex justify-end items-center space-x-2 p-6;
 
       .calendar-icon {
         @apply text-gray-400;
@@ -43,57 +41,61 @@
     }
   }
 
-  .transactions-list {
-    @apply space-y-4;
+  .transactions-container {
+    @apply bg-white px-6 py-6 -mt-6 overflow-y-auto h-[82vh] max-h-[87vh];
 
-    .no-transactions {
-      @apply bg-white rounded-xl p-8 text-center;
-
-      .no-transactions-icon {
-        @apply mx-auto text-gray-300 mb-4;
+    .transactions-list {
+      @apply space-y-4;
+  
+      .no-transactions {
+        @apply bg-white rounded-xl p-8 text-center;
+  
+        .no-transactions-icon {
+          @apply mx-auto text-gray-300 mb-4;
+        }
+  
+        .no-transactions-title {
+          @apply text-lg font-medium text-gray-900 mb-2;
+        }
+  
+        .no-transactions-text {
+          @apply text-gray-500;
+        }
       }
-
-      .no-transactions-title {
-        @apply text-lg font-medium text-gray-900 mb-2;
-      }
-
-      .no-transactions-text {
-        @apply text-gray-500;
-      }
-    }
-
-    .transaction-item {
-      @apply bg-white p-4 overflow-auto;
-
-      .transaction-content {
-        @apply flex items-center justify-between;
-
-        .transaction-left {
-          @apply flex items-center space-x-4;
-
-          .transaction-details {
-            .transaction-name {
-              @apply font-semibold text-gray-900;
-            }
-
-            .transaction-date {
-              @apply text-sm text-gray-500;
+  
+      .transaction-item {
+        @apply bg-white p-4 overflow-auto;
+  
+        .transaction-content {
+          @apply flex items-center justify-between;
+  
+          .transaction-left {
+            @apply flex items-center space-x-4;
+  
+            .transaction-details {
+              .transaction-name {
+                @apply font-semibold text-gray-900;
+              }
+  
+              .transaction-date {
+                @apply text-sm text-gray-500;
+              }
             }
           }
-        }
-
-        .transaction-right {
-          @apply text-right;
-
-          .transaction-amount {
-            @apply font-bold text-lg;
-
-            &.sent {
-              @apply text-red-600;
-            }
-
-            &.received {
-              @apply text-green-600;
+  
+          .transaction-right {
+            @apply text-right;
+  
+            .transaction-amount {
+              @apply font-bold text-lg;
+  
+              &.sent {
+                @apply text-red-600;
+              }
+  
+              &.received {
+                @apply text-green-600;
+              }
             }
           }
         }

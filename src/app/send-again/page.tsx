@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowLeft, LoaderCircle, Send } from 'lucide-react';
 import { useWalletStore } from '@/stores/walletStore';
@@ -9,7 +9,7 @@ import { User } from '@/types';
 
 import './styles.css';
 
-const SendAgainPage = () => {
+const SendAgainContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const userId = searchParams.get('userId');
@@ -180,4 +180,14 @@ const SendAgainPage = () => {
   );
 };
 
-export default SendAgainPage;
+export default function SendAgainPage() {
+  return (
+    <Suspense fallback={
+      <div className="loader">
+        <LoaderCircle className="loader-icon" />
+      </div>
+    }>
+      <SendAgainContent />
+    </Suspense>
+  );
+}
