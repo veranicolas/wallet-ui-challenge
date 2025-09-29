@@ -1,0 +1,151 @@
+@reference 'tailwindcss';
+
+.send-again-page {
+  @apply min-h-screen h-auto max-w-xl min-w-sm mx-auto flex flex-col justify-between;
+
+  .send-again-header {
+    @apply px-6 pt-8 text-white;
+
+    .header-content {
+      @apply w-full flex justify-between items-center mb-6;
+
+      button {
+        .arrow-icon {
+          @apply cursor-pointer hover:bg-white/10 rounded-full transition-colors;
+        }
+      }
+
+      h1 {
+        @apply text-xl w-full text-center mr-[24px] font-semibold;
+      }
+    }
+  }
+
+  .loading-container {
+    @apply min-h-screen bg-gray-50 flex items-center justify-center;
+
+    .loading-content {
+      @apply text-center;
+
+      .loading-avatar {
+        @apply w-16 h-16 bg-gray-200 rounded-full animate-pulse mx-auto mb-4;
+      }
+
+      p {
+        @apply text-gray-500;
+      }
+    }
+  }
+
+  .balance-display {
+    @apply flex flex-col items-center mb-6;
+
+    h2 {
+      @apply text-sm text-center text-white/80 mb-1;
+    }
+
+    p {
+      @apply text-3xl text-center font-bold;
+    }
+  }
+
+  .main-content {
+    @apply bg-white rounded-t-[40px] h-[83vh] flex flex-col justify-between pb-8;
+
+    .recipient-section {
+      @apply p-6;
+
+      .recipient-info {
+        @apply text-center;
+
+        .recipient-avatar {
+          @apply mx-auto mb-4;
+        }
+
+        h2 {
+          @apply text-2xl font-bold text-gray-900 mb-2;
+        }
+
+        p {
+          @apply text-gray-500;
+        }
+      }
+    }
+
+    .amount-section {
+      @apply bg-white p-6 mb-auto;
+
+      .section-title {
+        @apply text-lg font-semibold text-gray-900 mb-4;
+      }
+
+      .amount-input-container {
+        @apply relative;
+
+        .currency-symbol {
+          @apply absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl font-semibold text-gray-400;
+        }
+
+        .amount-input {
+          @apply w-full pl-10 pr-4 py-4 text-2xl text-gray-500 font-semibold text-center bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent;
+        }
+      }
+
+      .balance-info {
+        @apply flex justify-between items-center mt-4 text-sm;
+
+        .balance-label {
+          @apply text-gray-500;
+        }
+
+        .balance-amount {
+          @apply font-semibold text-gray-900;
+        }
+      }
+
+      .quick-amounts {
+        @apply flex space-x-2 mt-4;
+
+        .quick-amount-btn {
+          @apply flex-1 py-2 px-4 text-gray-500 cursor-pointer bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors;
+        }
+      }
+
+      .notes-section {
+        @apply my-6;
+
+        .notes-title {
+          @apply text-lg font-semibold text-gray-900 mb-4;
+        }
+
+        .notes-textarea {
+          @apply w-full p-4 text-gray-500 rounded-xl resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent;
+        }
+      }
+    }
+
+    .send-button-section {
+      @apply flex flex-col items-center;
+
+      .send-button {
+        @apply bg-[#0FD08B] w-[85%] cursor-pointer text-white p-4 mx-6 rounded-[1000px] font-semibold text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-all;
+
+        .loading-spinner {
+          @apply w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin;
+        }
+      }
+
+      .error-message {
+        @apply text-red-600 text-sm text-center mt-2;
+      }
+    }
+  }
+};
+
+.loader {
+  @apply min-h-screen flex items-center justify-center;
+
+  .loader-icon {
+    @apply animate-spin text-white w-20 h-20;
+  }
+}

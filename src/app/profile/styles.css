@@ -1,0 +1,85 @@
+@reference 'tailwindcss';
+
+.profile-page {
+  @apply min-h-screen h-auto bg-gray-50 max-w-xl min-w-sm mx-auto;
+
+  .profile-bg-color {
+    @apply bg-[#0FD08B];
+  }
+
+  .header {
+    @apply px-6 py-8 text-white;
+
+    .header-user {
+      @apply w-full flex justify-between items-center mb-6;
+
+      .back-button {
+        @apply cursor-pointer hover:bg-white/10 rounded-full transition-colors;
+      }
+      
+      .header-title {
+        @apply text-xl w-full text-center mr-[24px] font-semibold;
+      }
+    }
+  }
+
+  .loading-container {
+    @apply min-h-screen bg-gray-50 pb-20 flex items-center justify-center;
+
+    .loading-content {
+      @apply text-center;
+
+      .loading-avatar {
+        @apply w-16 h-16 bg-gray-200 rounded-full animate-pulse mx-auto mb-4;
+      }
+
+      .loading-text {
+        @apply h-4 bg-gray-200 rounded w-32 animate-pulse;
+      }
+    }
+  }
+
+  .profile-content {
+    @apply bg-white rounded-t-[40px] h-[calc(100vh-105px)] -mt-6 flex flex-col pt-12 px-6;
+
+    .user-info-section {
+      @apply flex flex-col gap-5;
+
+      .user-avatar {
+        @apply mx-auto mb-2 w-[237px] h-[237px];
+      }
+
+      .user-name {
+        @apply text-[32px] font-bold text-center text-gray-900 mb-1;
+      }
+    }
+
+    .user-details-section {
+      @apply flex flex-col gap-4 mt-16;
+
+      .detail-row {
+        @apply flex items-center justify-between;
+
+        .detail-label {
+          @apply text-[#999999] text-[16px];
+        }
+
+        .detail-value {
+          @apply text-gray-900 font-bold text-[16px];
+        }
+      }
+    }
+
+    .user-id-section {
+      @apply flex flex-row justify-between mt-auto;
+
+      .id-label {
+        @apply text-[#999999] text-[16px];
+      }
+
+      .id-value {
+        @apply text-[#999999] font-normal text-[16px];
+      }
+    }
+  }
+}

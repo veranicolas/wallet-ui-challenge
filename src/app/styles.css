@@ -1,0 +1,122 @@
+@reference 'tailwindcss';
+
+.home-page {
+  @apply min-h-screen h-auto bg-gray-50 max-w-xl min-w-sm mx-auto;
+
+  .home-bg-color {
+    @apply bg-[#0FD08B];
+  }
+
+  .header {
+    @apply px-6 py-8 text-white;
+
+    .header-user {
+      @apply flex items-center justify-between mb-6;
+
+      .user-info {
+        @apply flex items-center space-x-3 cursor-pointer;
+
+        .user-greeting {
+          
+          .greeting {
+            @apply text-sm opacity-80;
+          }
+
+          .user-name {
+            @apply text-lg font-semibold;
+          }
+        }
+
+        .user-name {
+          @apply text-lg font-medium;
+        }
+      }
+    }
+
+    .balance-card {
+      @apply bg-white/10 backdrop-blur-sm rounded-2xl p-6;
+
+      .balance-header {
+        @apply flex items-center justify-between mb-2;
+
+        .balance-label {
+          @apply text-lg opacity-80;
+        }
+
+        .balance-toggle {
+          @apply p-1 rounded-full hover:bg-white/20 transition-colors cursor-pointer;
+        }
+      }
+
+      .balance-amount {
+        @apply text-3xl font-bold;
+      }
+    }
+  }
+
+  .contacts-section {
+    @apply bg-white rounded-tr-[40px] rounded-tl-[40px] shadow-sm border border-gray-100 p-6;
+
+    .section-header {
+      @apply flex items-center justify-between mb-4;
+
+      .section-title {
+        @apply text-lg font-semibold text-gray-900;
+      }
+    }
+
+    .contacts-list {
+      @apply flex space-x-4 overflow-x-auto pb-2;
+
+      .contact-item {
+        @apply flex-shrink-0 text-center hover:bg-gray-50 rounded-xl p-2 transition-colors;
+
+        .contact-name {
+          @apply text-xs text-gray-600 w-16 truncate;
+        }
+      }
+    }
+  }
+
+  .transactions-section {
+    @apply px-6 py-4 bg-white;
+
+    .section-header {
+      @apply flex items-center justify-between mb-4;
+
+      .section-title {
+        @apply text-lg font-semibold text-gray-900;
+      }
+    }
+
+    .transaction-item {
+      @apply p-4 hover:bg-gray-50 transition-colors;
+
+      .transaction-content {
+        @apply flex items-center justify-between;
+
+        .transaction-user {
+          @apply flex items-center space-x-3;
+
+          .transaction-details {
+            .transaction-name {
+              @apply font-medium text-gray-900;
+            }
+
+            .transaction-date {
+              @apply text-sm text-gray-500;
+            }
+          }
+        }
+
+        .transaction-amount {
+          @apply text-right;
+
+          .amount-value {
+            @apply font-semibold text-red-600;
+          }
+        }
+      }
+    }
+  }
+}
